@@ -187,6 +187,27 @@
         .visible {
             display: block;
         }
+         /* Mobile-specific styles for screens up to 768px wide */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.5em; /* Smaller font for the main header */
+        }
+
+        .content-wrapper {
+            padding: 10px; /* Reduced padding */
+        }
+
+        #initiateButton {
+            padding: 10px 20px; /* Smaller button */
+            font-size: 1em;
+        }
+
+        #messageContainer {
+            padding: 15px; /* Reduced padding for the message box */
+            font-size: 0.9em; /* Smaller font for the message text */
+            max-height: 300px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -293,4 +314,5 @@ Your Aarya (aka Your Best Friend)`;
     </script>
 </body>
 </html>
+
 
