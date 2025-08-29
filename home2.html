@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Bhavya Shah! - System Initiated</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-bg-color: #0a0a0f;
+            --accent-color-1: #00e676;
+            --accent-color-2: #64ffda;
+            --text-color: #e0e0e0;
+            --glitch-color-1: #ff00ff;
+            --glitch-color-2: #00ffff;
+            --button-bg: #4caf50;
+            --button-hover-bg: #66bb6a;
+        }
+
+        body {
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            font-family: 'Roboto Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .background-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: var(--accent-color-2);
+            opacity: 0.2;
+            animation: particle-flow 15s infinite ease-in-out;
+            border-radius: 50%;
+        }
+
+        @keyframes particle-flow {
+            0% { transform: translateY(0vh) translateX(0vw) scale(0.5); opacity: 0.2; }
+            25% { transform: translateY(20vh) translateX(15vw) scale(0.8); opacity: 0.3; }
+            50% { transform: translateY(50vh) translateX(0vw) scale(0.6); opacity: 0.2; }
+            75% { transform: translateY(80vh) translateX(-15vw) scale(0.9); opacity: 0.4; }
+            100% { transform: translateY(100vh) translateX(0vw) scale(0.7); opacity: 0.2; }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            background-color: rgba(10, 10, 15, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color-1);
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--accent-color-1);
+            position: relative;
+        }
+        
+        .glitch {
+            animation: glitch-animation 2s infinite linear alternate-reverse;
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--main-bg-color);
+            overflow: hidden;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--glitch-color-1);
+            animation: glitch-split 1.5s infinite linear alternate-reverse;
+            clip-path: inset(60% 0 0 0);
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: 2px 0 var(--glitch-color-2);
+            animation: glitch-split 2s infinite linear alternate-reverse;
+            clip-path: inset(0 0 60% 0);
+        }
+
+        @keyframes glitch-animation {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            100% { transform: translate(0); }
+        }
+        @keyframes glitch-split {
+            0% { clip-path: inset(0 0 100% 0); }
+            20% { clip-path: inset(70% 0 0 0); }
+            40% { clip-path: inset(0 0 70% 0); }
+            60% { clip-path: inset(30% 0 0 0); }
+            80% { clip-path: inset(0 0 30% 0); }
+            100% { clip-path: inset(100% 0 0 0); }
+        }
+
+        #initiateButton {
+            background-color: var(--button-bg);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px var(--button-bg);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        #initiateButton:hover {
+            background-color: var(--button-hover-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px var(--button-bg);
+        }
+
+        #messageContainer {
+            margin-top: 30px;
+            min-height: 150px;
+            width: 100%;
+            max-width: 700px;
+            background-color: rgba(20, 20, 25, 0.8);
+            border: 1px solid var(--accent-color-2);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+            text-align: left;
+            white-space: pre-wrap;
+            overflow: auto;
+            max-height: 400px;
+        }
+
+        .typing-effect {
+            overflow: hidden;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: var(--accent-color-2);
+            position: relative;
+        }
+
+        .blinking-cursor {
+            border-right: .15em solid var(--accent-color-1);
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color-1); }
+        }
+
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <audio id="clickSound" src="button-305770.mp3" preload="auto"></audio>
+    <audio id="typingSound" src="clicky-keyboard-typing-361367.mp3" preload="auto"></audio>
+
+    <div class="background-particles"></div>
+
+    <div class="content-wrapper">
+        <h1 class="glitch" data-text="SYSTEM PROTOCOL: BIRTHDAY">SYSTEM PROTOCOL: BIRTHDAY</h1>
+        <button id="initiateButton">INITIATE BIRTHDAY SEQUENCE</button>
+        
+        <div id="messageContainer" class="hidden">
+            <div id="typingText" class="typing-effect"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const initiateButton = document.getElementById('initiateButton');
+            const messageContainer = document.getElementById('messageContainer');
+            const typingTextElement = document.getElementById('typingText');
+            const h1Element = document.querySelector('h1');
+
+            // Get the audio elements
+            const clickSound = document.getElementById('clickSound');
+            const typingSound = document.getElementById('typingSound');
+
+            // IMPORTANT: Replace the placeholder with your friend's name
+            const friendName = "Bhavya Shah";
+
+            const secretMessage = 
+`
+[LOG] ${new Date().toISOString()} - Processing Birthday Request for User ID: ${friendName.replace(/\s/g, '').toLowerCase()}_bday
+
+[STATUS] Initializing secure channel...
+[STATUS] Decrypting birthday message payload...
+[SUCCESS] Decryption complete.
+
+#########################################################
+#                                                       #
+#    🥳 H A P P Y   B I R T H D A Y , ${friendName.toUpperCase()} ! 🥳   #
+#                                                       #
+#########################################################
+
+May your code be bug-free, your servers always up,
+and your coffee eternally refilled.
+
+Wishing you an awesome day filled with joy, tech gadgets,
+and everything you debugged for.
+
+Best regards,
+Your Aarya (aka Your Best Friend)`;
+
+            initiateButton.addEventListener('click', () => {
+                // Play the click sound
+                clickSound.play();
+
+                initiateButton.classList.add('hidden');
+                messageContainer.classList.remove('hidden');
+                typingTextElement.classList.add('blinking-cursor');
+                h1Element.classList.remove('glitch');
+                h1Element.textContent = `ACCESS GRANTED: ${friendName.toUpperCase()}'S BIRTHDAY`;
+                h1Element.style.color = 'var(--accent-color-2)';
+                h1Element.style.textShadow = '0 0 10px var(--accent-color-2)';
+
+                // Start playing the typing sound and set it to loop
+                typingSound.loop = true;
+                typingSound.play();
+
+                let i = 0;
+                const speed = 30;
+
+                function typeWriter() {
+                    if (i < secretMessage.length) {
+                        typingTextElement.innerHTML += secretMessage.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    } else {
+                        // Stop the typing sound when finished
+                        typingSound.pause();
+                        typingSound.currentTime = 0; // Reset for next play if needed
+                        typingTextElement.classList.remove('blinking-cursor');
+                    }
+                }
+
+                typeWriter();
+            });
+
+            const particlesContainer = document.querySelector('.background-particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.animationDelay = `${Math.random() * -15}s`;
+                particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
